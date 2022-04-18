@@ -1,0 +1,2660 @@
+---GUI
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Enabled = false
+
+game.Players.LocalPlayer.MenuPlaylist["1Menu"].TimePosition = 0
+game.Players.LocalPlayer.MenuPlaylist["1Menu"].SoundId = "rbxassetid://320354175"
+wait(0.5)
+game.Players.LocalPlayer.MenuPlaylist["1Menu"].Volume = 1
+
+---------------------------------------------
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Credits = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+Credits.Name = "Credits"
+Credits.Parent = MainFrame
+Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Credits.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Credits.Position = UDim2.new(0.0500000007, 0, 0.0500000007, 0)
+Credits.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+Credits.Font = Enum.Font.Arcade
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+-- Scripts:
+
+local function CRQDKY_fake_script() -- Credits.Script 
+	local script = Instance.new('Script', Credits)
+
+	local credits = script.Parent
+	local text
+	
+	function SoundEffect ()
+		local Sound = Instance.new("Sound",Workspace)
+		Sound.Name = "TextSound"
+		Sound.SoundId = "http://www.roblox.com/asset/?id=3188795283"
+		Sound.PlaybackSpeed = 1
+		Sound.Volume = 1
+		Sound:Play()
+		coroutine.resume(coroutine.create(function()
+			wait(1)
+			Sound:Destroy()
+		end))
+	end
+	
+	function setText(word)
+		text = word
+		for i = 1, #text do
+			credits.Text = string.sub(text, 1, i)
+			SoundEffect()
+			wait(0.04)
+		end
+	end
+	
+	
+	setText("Oh hello!")
+	wait(2)
+	setText("I think you'll like the unknown script")
+	wait(2)
+	setText("Credit:CharaTheBest=>#8338")
+	wait(2)
+	setText("Get Started!")
+end
+coroutine.wrap(CRQDKY_fake_script)()
+wait(13)
+MainFrame:Destroy()
+Credits:Destroy()
+
+
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "GTFrisk"
+wait(2)
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local Humanoid = Character.Humanoid
+local UIS = game:GetService("UserInputService")
+local m1cooldown = true
+                        local PLAYERS_INFO = Instance.new("ScreenGui")
+                        local Frame = Instance.new("Frame")
+                        local UICorner = Instance.new("UICorner")
+                        local Frame_2 = Instance.new("Frame")
+                        local Frame_3 = Instance.new("Frame")
+                        local UICorner_2 = Instance.new("UICorner")
+                        local Frame_4 = Instance.new("Frame")
+                        local ImageLabel = Instance.new("ImageLabel")
+                        local Frame_5 = Instance.new("Frame")
+                        local LockedOn = Instance.new("TextLabel")
+                        local Nickname = Instance.new("TextLabel")
+                        local ManaText = Instance.new("TextLabel")
+                        local Mana = Instance.new("TextLabel")
+                        local BlockText = Instance.new("TextLabel")
+                        local DEF = Instance.new("TextLabel")
+                        local ATKText = Instance.new("TextLabel")
+                        local ATK = Instance.new("TextLabel")
+                        local YourHPText = Instance.new("TextLabel")
+                        local YourHP = Instance.new("TextLabel")
+                        local DEFText = Instance.new("TextLabel")
+                        local Type = Instance.new("TextLabel")
+                        local HP = Instance.new("TextLabel")
+                        local HPText = Instance.new("TextLabel")
+                        local StamText = Instance.new("TextLabel")
+                        local Stam = Instance.new("TextLabel")
+                        local TypeText = Instance.new("TextLabel")
+                        local Block = Instance.new("TextLabel")
+
+                        --Properties:
+                        --game.CoreGui.PLAYERS_INFO:Remove()
+                        PLAYERS_INFO.Name = "PLAYERS_INFO"
+                        PLAYERS_INFO.Parent = game.CoreGui
+                        PLAYERS_INFO.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+                        Frame.Parent = PLAYERS_INFO
+                        Frame.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame.BorderSizePixel = 5
+                        Frame.Position = UDim2.new(0.5, 0, 0, -236)
+                        Frame.Size = UDim2.new(0, 710, 0, 260)
+                        Frame.ZIndex = 0
+
+                        UICorner.CornerRadius = UDim.new(0, 18)
+                        UICorner.Parent = Frame
+
+                        Frame_2.Parent = Frame
+                        Frame_2.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_2.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_2.BorderSizePixel = 0
+                        Frame_2.Position = UDim2.new(0.5, 0, 0, -5)
+                        Frame_2.Size = UDim2.new(0, 710, 0, 50)
+
+                        Frame_3.Parent = Frame
+                        Frame_3.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        Frame_3.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_3.BorderSizePixel = 5
+                        Frame_3.Position = UDim2.new(0.5, 0, 0, 0)
+                        Frame_3.Size = UDim2.new(0, 700, 0, 250)
+                        Frame_3.ZIndex = 2
+
+                        UICorner_2.CornerRadius = UDim.new(0, 18)
+                        UICorner_2.Parent = Frame_3
+
+                        Frame_4.Parent = Frame_3
+                        Frame_4.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        Frame_4.BackgroundTransparency = 1.000
+                        Frame_4.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_4.BorderSizePixel = 0
+                        Frame_4.Position = UDim2.new(0.5, 0, 0, 0)
+                        Frame_4.Size = UDim2.new(0, 700, 0, 50)
+                        Frame_4.ZIndex = 3
+
+                        ImageLabel.Parent = Frame_4
+                        ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ImageLabel.BorderSizePixel = 0
+                        ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+                        ImageLabel.ZIndex = 3
+                        ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+                        ImageLabel.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+                        Frame_5.Parent = Frame_3
+                        Frame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Frame_5.BackgroundTransparency = 1.000
+                        Frame_5.Size = UDim2.new(1, 0, 1, 0)
+                        Frame_5.ZIndex = 4
+
+                        LockedOn.Name = "LockedOn"
+                        LockedOn.Parent = Frame_5
+                        LockedOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.BackgroundTransparency = 1.000
+                        LockedOn.Size = UDim2.new(0, 230, 0, 50)
+                        LockedOn.Font = Enum.Font.Arcade
+                        LockedOn.Text = "LOCKED ON:"
+                        LockedOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.TextScaled = true
+                        LockedOn.TextSize = 56.000
+                        LockedOn.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.TextStrokeTransparency = 1.000
+                        LockedOn.TextWrapped = true
+                        LockedOn.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Nickname.Name = "Nickname"
+                        Nickname.Parent = Frame_5
+                        Nickname.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.BackgroundTransparency = 1.000
+                        Nickname.Position = UDim2.new(0, 230, 0, 0)
+                        Nickname.Size = UDim2.new(0, 270, 0, 50)
+                        Nickname.Font = Enum.Font.Arcade
+                        Nickname.Text = "NICKNAME"
+                        Nickname.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.TextScaled = true
+                        Nickname.TextSize = 56.000
+                        Nickname.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.TextStrokeTransparency = 1.000
+                        Nickname.TextWrapped = true
+                        Nickname.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ManaText.Name = "ManaText"
+                        ManaText.Parent = Frame_5
+                        ManaText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.BackgroundTransparency = 1.000
+                        ManaText.Position = UDim2.new(0, 330, 0, 100)
+                        ManaText.Size = UDim2.new(0, 120, 0, 50)
+                        ManaText.Font = Enum.Font.Arcade
+                        ManaText.Text = "MANA:"
+                        ManaText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.TextScaled = true
+                        ManaText.TextSize = 56.000
+                        ManaText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.TextStrokeTransparency = 1.000
+                        ManaText.TextWrapped = true
+                        ManaText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Mana.Name = "Mana"
+                        Mana.Parent = Frame_5
+                        Mana.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.BackgroundTransparency = 1.000
+                        Mana.Position = UDim2.new(0, 450, 0, 100)
+                        Mana.Size = UDim2.new(0, 160, 0, 50)
+                        Mana.Font = Enum.Font.Arcade
+                        Mana.Text = "100/100"
+                        Mana.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.TextScaled = true
+                        Mana.TextSize = 56.000
+                        Mana.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.TextStrokeTransparency = 1.000
+                        Mana.TextWrapped = true
+                        Mana.TextXAlignment = Enum.TextXAlignment.Left
+
+                        BlockText.Name = "BlockText"
+                        BlockText.Parent = Frame_5
+                        BlockText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.BackgroundTransparency = 1.000
+                        BlockText.Position = UDim2.new(0, 0, 0, 150)
+                        BlockText.Size = UDim2.new(0, 140, 0, 50)
+                        BlockText.Font = Enum.Font.Arcade
+                        BlockText.Text = "BLOCK:"
+                        BlockText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.TextScaled = true
+                        BlockText.TextSize = 56.000
+                        BlockText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.TextStrokeTransparency = 1.000
+                        BlockText.TextWrapped = true
+                        BlockText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        DEF.Name = "DEF"
+                        DEF.Parent = Frame_5
+                        DEF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.BackgroundTransparency = 1.000
+                        DEF.Position = UDim2.new(0, 350, 0, 50)
+                        DEF.Size = UDim2.new(0, 70, 0, 50)
+                        DEF.Font = Enum.Font.Arcade
+                        DEF.Text = "100"
+                        DEF.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.TextScaled = true
+                        DEF.TextSize = 56.000
+                        DEF.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.TextStrokeTransparency = 1.000
+                        DEF.TextWrapped = true
+                        DEF.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ATKText.Name = "ATKText"
+                        ATKText.Parent = Frame_5
+                        ATKText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.BackgroundTransparency = 1.000
+                        ATKText.Position = UDim2.new(0, 440, 0, 50)
+                        ATKText.Size = UDim2.new(0, 100, 0, 50)
+                        ATKText.Font = Enum.Font.Arcade
+                        ATKText.Text = "ATK:"
+                        ATKText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.TextScaled = true
+                        ATKText.TextSize = 56.000
+                        ATKText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.TextStrokeTransparency = 1.000
+                        ATKText.TextWrapped = true
+                        ATKText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ATK.Name = "ATK"
+                        ATK.Parent = Frame_5
+                        ATK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.BackgroundTransparency = 1.000
+                        ATK.Position = UDim2.new(0, 540, 0, 50)
+                        ATK.Size = UDim2.new(0, 70, 0, 50)
+                        ATK.Font = Enum.Font.Arcade
+                        ATK.Text = "100"
+                        ATK.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.TextScaled = true
+                        ATK.TextSize = 56.000
+                        ATK.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.TextStrokeTransparency = 1.000
+                        ATK.TextWrapped = true
+                        ATK.TextXAlignment = Enum.TextXAlignment.Left
+
+                        YourHPText.Name = "YourHPText"
+                        YourHPText.Parent = Frame_5
+                        YourHPText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.BackgroundTransparency = 1.000
+                        YourHPText.Position = UDim2.new(0, 0, 0, 200)
+                        YourHPText.Size = UDim2.new(0, 190, 0, 50)
+                        YourHPText.Font = Enum.Font.Arcade
+                        YourHPText.Text = "YOUR HP:"
+                        YourHPText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.TextScaled = true
+                        YourHPText.TextSize = 56.000
+                        YourHPText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.TextStrokeTransparency = 1.000
+                        YourHPText.TextWrapped = true
+                        YourHPText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        YourHP.Name = "YourHP"
+                        YourHP.Parent = Frame_5
+                        YourHP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.BackgroundTransparency = 1.000
+                        YourHP.Position = UDim2.new(0, 190, 0, 200)
+                        YourHP.Size = UDim2.new(0, 160, 0, 50)
+                        YourHP.Font = Enum.Font.Arcade
+                        YourHP.Text = "100/100"
+                        YourHP.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.TextScaled = true
+                        YourHP.TextSize = 56.000
+                        YourHP.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.TextStrokeTransparency = 1.000
+                        YourHP.TextWrapped = true
+                        YourHP.TextXAlignment = Enum.TextXAlignment.Left
+
+                        DEFText.Name = "DEFText"
+                        DEFText.Parent = Frame_5
+                        DEFText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.BackgroundTransparency = 1.000
+                        DEFText.Position = UDim2.new(0, 250, 0, 50)
+                        DEFText.Size = UDim2.new(0, 100, 0, 50)
+                        DEFText.Font = Enum.Font.Arcade
+                        DEFText.Text = "DEF:"
+                        DEFText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.TextScaled = true
+                        DEFText.TextSize = 56.000
+                        DEFText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.TextStrokeTransparency = 1.000
+                        DEFText.TextWrapped = true
+                        DEFText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Type.Name = "Type"
+                        Type.Parent = Frame_5
+                        Type.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.BackgroundTransparency = 1.000
+                        Type.Position = UDim2.new(0, 130, 0, 100)
+                        Type.Size = UDim2.new(0, 200, 0, 50)
+                        Type.Font = Enum.Font.Arcade
+                        Type.Text = "Undyne"
+                        Type.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.TextScaled = true
+                        Type.TextSize = 56.000
+                        Type.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.TextStrokeTransparency = 1.000
+                        Type.TextWrapped = true
+                        Type.TextXAlignment = Enum.TextXAlignment.Left
+
+                        HP.Name = "HP"
+                        HP.Parent = Frame_5
+                        HP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.BackgroundTransparency = 1.000
+                        HP.Position = UDim2.new(0, 70, 0, 50)
+                        HP.Size = UDim2.new(0, 160, 0, 50)
+                        HP.Font = Enum.Font.Arcade
+                        HP.Text = "100/100"
+                        HP.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.TextScaled = true
+                        HP.TextSize = 56.000
+                        HP.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.TextStrokeTransparency = 1.000
+                        HP.TextWrapped = true
+                        HP.TextXAlignment = Enum.TextXAlignment.Left
+
+                        HPText.Name = "HPText"
+                        HPText.Parent = Frame_5
+                        HPText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.BackgroundTransparency = 1.000
+                        HPText.Position = UDim2.new(0, 0, 0, 50)
+                        HPText.Size = UDim2.new(0, 70, 0, 50)
+                        HPText.Font = Enum.Font.Arcade
+                        HPText.Text = "HP:"
+                        HPText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.TextScaled = true
+                        HPText.TextSize = 56.000
+                        HPText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.TextStrokeTransparency = 1.000
+                        HPText.TextWrapped = true
+                        HPText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        StamText.Name = "StamText"
+                        StamText.Parent = Frame_5
+                        StamText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.BackgroundTransparency = 1.000
+                        StamText.Position = UDim2.new(0, 330, 0, 150)
+                        StamText.Size = UDim2.new(0, 120, 0, 50)
+                        StamText.Font = Enum.Font.Arcade
+                        StamText.Text = "STAM:"
+                        StamText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.TextScaled = true
+                        StamText.TextSize = 56.000
+                        StamText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.TextStrokeTransparency = 1.000
+                        StamText.TextWrapped = true
+                        StamText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Stam.Name = "Stam"
+                        Stam.Parent = Frame_5
+                        Stam.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.BackgroundTransparency = 1.000
+                        Stam.Position = UDim2.new(0, 450, 0, 150)
+                        Stam.Size = UDim2.new(0, 160, 0, 50)
+                        Stam.Font = Enum.Font.Arcade
+                        Stam.Text = "100/100"
+                        Stam.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.TextScaled = true
+                        Stam.TextSize = 56.000
+                        Stam.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.TextStrokeTransparency = 1.000
+                        Stam.TextWrapped = true
+                        Stam.TextXAlignment = Enum.TextXAlignment.Left
+
+                        TypeText.Name = "TypeText"
+                        TypeText.Parent = Frame_5
+                        TypeText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.BackgroundTransparency = 1.000
+                        TypeText.Position = UDim2.new(0, 0, 0, 100)
+                        TypeText.Size = UDim2.new(0, 130, 0, 50)
+                        TypeText.Font = Enum.Font.Arcade
+                        TypeText.Text = "TYPE:"
+                        TypeText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.TextScaled = true
+                        TypeText.TextSize = 56.000
+                        TypeText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.TextStrokeTransparency = 1.000
+                        TypeText.TextWrapped = true
+                        TypeText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Block.Name = "Block"
+                        Block.Parent = Frame_5
+                        Block.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.BackgroundTransparency = 1.000
+                        Block.Position = UDim2.new(0, 140, 0, 150)
+                        Block.Size = UDim2.new(0, 150, 0, 50)
+                        Block.Font = Enum.Font.Arcade
+                        Block.Text = "False"
+                        Block.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.TextScaled = true
+                        Block.TextSize = 56.000
+                        Block.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.TextStrokeTransparency = 1.000
+                        Block.TextWrapped = true
+                        Block.TextXAlignment = Enum.TextXAlignment.Left
+
+                        -- Scripts:
+
+                        local function WWIF_fake_script() -- Frame_5.LocalScript
+                            local script = Instance.new("LocalScript", Frame_5)
+
+                            -- -236
+                            -- -36
+                            local function f(a)
+                                if script.Parent:FindFirstChild(a) == nil then
+                                    print("OH SHIT")
+                                end
+                                return script.Parent:FindFirstChild(a) == nil
+                            end
+                            local onTop = true
+                            local TweenService = game:GetService("TweenService")
+                            local tweenInfo =
+                                TweenInfo.new(
+                                1, -- Time
+                                Enum.EasingStyle.Quad, -- EasingStyle
+                                Enum.EasingDirection.InOut, -- EasingDirection
+                                0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+                                false, -- Reverses (tween will reverse once reaching it's goal)
+                                0 -- DelayTime
+                            )
+                            local tweenToTop =
+                                TweenService:Create(
+                                script.Parent.Parent.Parent,
+                                tweenInfo,
+                                {Position = UDim2.new(0.5, 0, 0, -236)}
+                            )
+                            local tweenToBottom =
+                                TweenService:Create(
+                                script.Parent.Parent.Parent,
+                                tweenInfo,
+                                {Position = UDim2.new(0.5, 0, 0, -36)}
+                            )
+                            local function moveToTop()
+                                if onTop then
+                                    return
+                                end
+                                script.Parent.Nickname.Text = "nil"
+                                script.Parent.Type.Text = "nil"
+                                script.Parent.HP.Text = "NaN/NaN"
+                                script.Parent.DEF.Text = "NaN"
+                                script.Parent.ATK.Text = "NaN"
+                                script.Parent.Block.Text = "nil"
+                                script.Parent.Stam.Text = "NaN/NaN"
+                                script.Parent.Mana.Text = "NaN/NaN"
+                                onTop = true
+                                tweenToBottom:Pause()
+                                tweenToTop:Play()
+                            end
+                            local function moveToBottom()
+                                if not onTop then
+                                    return
+                                end
+                                onTop = false
+                                tweenToTop:Pause()
+                                tweenToBottom:Play()
+                            end
+                            while game:GetService("RunService").Heartbeat:Wait() do
+                                if
+                                    f("Nickname") or f("Type") or f("HP") or f("DEF") or f("ATK") or f("Block") or
+                                        f("Stam") or
+                                        f("Mana")
+                                 then
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Character ~= nil then
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil then
+                                        script.Parent.YourHP.Text =
+                                            math.ceil(game.Players.LocalPlayer.Character.Humanoid.Health) ..
+                                            "/" .. math.ceil(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)
+                                    else
+                                        script.Parent.YourHP.Text = "NaN/NaN"
+                                    end
+                                else
+                                    script.Parent.YourHP.Text = "NaN/NaN"
+                                end
+                                if disable_lock_info then
+                                    moveToTop()
+                                    continue
+                                end
+                                if game.Players.LocalPlayer.Backpack:FindFirstChild("Main") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Backpack.Main:FindFirstChild("LockOnScript") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Backpack.Main.LockOnScript:FindFirstChild("LockOn") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                local nickname = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+                                if nickname == nil then
+                                    moveToTop()
+                                    continue
+                                end
+                                if game.Workspace:FindFirstChild(nickname.Name) == nil then
+                                    moveToTop()
+                                    continue
+                                end
+                                nickname = nickname.Name
+                                moveToBottom()
+                                script.Parent.Nickname.Text = nickname
+                                if game.Workspace[nickname]:FindFirstChild("Type") ~= nil then
+                                    script.Parent.Type.Text = game.Workspace[nickname].Type.Value
+                                else
+                                    script.Parent.Type.Text = "nil"
+                                end
+                                if game.Workspace[nickname]:FindFirstChild("Humanoid") ~= nil then
+                                    script.Parent.HP.Text =
+                                        math.ceil(game.Workspace[nickname].Humanoid.Health) ..
+                                        "/" .. math.ceil(game.Workspace[nickname].Humanoid.MaxHealth)
+                                else
+                                    script.Parent.HP.Text = "NaN/NaN"
+                                end
+                                if game.Workspace[nickname]:FindFirstChild("Data") == nil then
+                                    script.Parent.DEF.Text = "NaN"
+                                    script.Parent.ATK.Text = "NaN"
+                                    script.Parent.Block.Text = "nil"
+                                    script.Parent.Stam.Text = "NaN/NaN"
+                                    script.Parent.Mana.Text = "NaN/NaN"
+                                continue
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Defense") ~= nil then
+                                    script.Parent.DEF.Text = math.ceil(game.Workspace[nickname].Data.Defense.Value)
+                                else
+                                    script.Parent.DEF.Text = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Attack") ~= nil then
+                                    script.Parent.ATK.Text = math.ceil(game.Workspace[nickname].Data.Attack.Value)
+                                else
+                                    script.Parent.ATK.Text = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Blocking") ~= nil then
+                                    if game.Workspace[nickname].Data.Blocking.Value then
+                                        script.Parent.Block.Text = "True"
+                                    else
+                                        script.Parent.Block.Text = "False"
+                                    end
+                                else
+                                    script.Parent.Block.Text = "nil"
+                                end
+                                local sprintMax = "NaN"
+                                local sprint = "NaN"
+                                if game.Workspace[nickname].Data:FindFirstChild("SprintMeter") ~= nil then
+                                    sprint = math.ceil(game.Workspace[nickname].Data.SprintMeter.Value)
+                                else
+                                    sprint = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("MaxSprintMeter") ~= nil then
+                                    sprintMax = math.ceil(game.Workspace[nickname].Data.MaxSprintMeter.Value)
+                                else
+                                    sprintMax = "NaN"
+                                end
+                                local staminaMax = "NaN"
+                                local stamina = "NaN"
+                                if game.Workspace[nickname].Data:FindFirstChild("Stamina") ~= nil then
+                                    stamina = math.ceil(game.Workspace[nickname].Data.Stamina.Value)
+                                else
+                                    stamina = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("MaxStamina") ~= nil then
+                                    staminaMax = math.ceil(game.Workspace[nickname].Data.MaxStamina.Value)
+                                else
+                                    staminaMax = "NaN"
+                                end
+                                script.Parent.Stam.Text = sprint .. "/" .. sprintMax
+                                script.Parent.Mana.Text = stamina .. "/" .. staminaMax
+                            end
+                        end
+                        coroutine.wrap(WWIF_fake_script)()
+
+
+
+local HealthBar = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+local HealthLabel = Instance.new("TextLabel")
+local PName = Instance.new("TextLabel")
+local rep = game:GetService("ReplicatedStorage")
+local uis = game:GetService("UserInputService")
+local plrs = game:GetService("Players")
+local runS = game:GetService("RunService")
+local tweenS = game:GetService("TweenService")
+local v21 = require(game:GetService("ReplicatedStorage").ClientModules.MainModule);
+local remotes = rep:WaitForChild("Remotes")
+local damage = remotes:WaitForChild("Damage")
+local functions = remotes:WaitForChild("Functions")
+local events = remotes:WaitForChild("Events")
+local LoseMoves = remotes:WaitForChild("CharaMoves")
+local main
+local plr = plrs.LocalPlayer
+local plrGui = plr:WaitForChild("PlayerGui")
+local mouse = plr:GetMouse()
+local player = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local rs = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+
+HealthBar.Name = "HealthBar"
+HealthBar.Parent = player.Character.Head
+HealthBar.ExtentsOffset = Vector3.new(0, 6, 0)
+HealthBar.Size = UDim2.new(4, 0, 2, 0)
+
+Frame.Parent = HealthBar
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+HealthLabel.Name = "HealthLabel"
+HealthLabel.Parent = Frame
+HealthLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+HealthLabel.BackgroundTransparency = 1.000
+HealthLabel.Position = UDim2.new(0.200000003, 0, 0.200000003, 0)
+HealthLabel.Size = UDim2.new(0.800000012, 0, 0.300000012, 0)
+HealthLabel.Font = Enum.Font.Arcade
+HealthLabel.Text = ""
+HealthLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+HealthLabel.TextScaled = true
+HealthLabel.TextSize = 14.000
+HealthLabel.TextWrapped = true
+HealthLabel.TextXAlignment = Enum.TextXAlignment.Left
+HealthLabel.TextYAlignment = Enum.TextYAlignment.Center
+
+PName.Name = "PName"
+PName.Parent = Frame
+PName.BackgroundColor3 = Color3.fromRGB(255, 0, 0) 
+PName.BackgroundTransparency = 1.000
+PName.Position = UDim2.new(-0.899999976, 0, -0.800000012, 0) 
+PName.Size = UDim2.new(3, 0, 1, 0) 
+PName.Font = Enum.Font.Arcade
+PName.Text = "Ronin"
+PName.TextColor3 = Color3.fromRGB(255, 0, 0)
+PName.TextScaled = true
+PName.TextSize = 5.000
+PName.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+PName.TextStrokeTransparency = 0.000
+PName.TextWrapped = true
+PName.TextXAlignment = Enum.TextXAlignment.Center
+PName.TextYAlignment = Enum.TextYAlignment.Top
+PName.Rotation = 5
+
+local part = PName
+        
+        local Info = TweenInfo.new(
+            2,                              --Length (seconds)
+            Enum.EasingStyle.Sine,          --Easing Style
+            Enum.EasingDirection.InOut,       --Easing Direction
+            -1,                             --Times Repeated
+            true,                           --reversed
+            0                               --deşau
+            )
+            
+        local Goals = {
+            Rotation = -5
+        }
+        
+        local nametween = TweenService:Create(part, Info, Goals)
+        nametween:Play()
+
+
+
+
+
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChildren()) do
+v:Destroy()
+end
+
+local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
+music.Volume = 2
+music.SoundId = "rbxassetid://5728357518"
+music.Looped = true
+music:Play()
+
+
+
+game.Workspace.ServerEffects.ServerCooldown:Destroy()
+        game.Players.LocalPlayer:GetMouse():Destroy()
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8690923610"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play() k:AdjustSpeed(1)
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8690923610"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play() k:AdjustSpeed(1)
+
+
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8690923610"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play() k:AdjustSpeed(1)
+
+
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8690923610"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play() k:AdjustSpeed(1)
+
+
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8690923610"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play() k:AdjustSpeed(1)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(player.Backpack.Main:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'moves') then
+v.Animations.Run.AnimationId = "rbxassetid://8691016359"
+v.Animations.Block.AnimationId = "rbxassetid://8692122621"
+end
+end
+---------Module------------------
+local module
+local modulelocation
+original = player.Backpack.Main
+clone = player.Backpack.Main:Clone()
+for _,v in pairs(original:GetDescendants()) do--- the 
+if v.Name == 'ModuleScript' then
+module = v
+modulelocation = v.Parent.Name
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'ModuleScript' then
+v:Destroy()
+end
+end
+ 
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == modulelocation then
+module.Parent = v
+ 
+end
+end
+-------------Gui stuff-----------Just to make the whole thing work bascially
+for _,v in pairs(player.PlayerGui.UI.Ui:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'move') then
+originalm = v
+clonem = v:Clone()
+end
+end
+for _,v in pairs(player.PlayerGui:GetChildren()) do
+er = string.lower(v.Name)
+if string.find(er,'indicator') then
+clonem1 = v:Clone()
+originalm1 = v
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'Extra' then
+eg = v
+end
+end
+----------------
+clonem1.Parent = eg
+clonem.Parent = eg
+originalm:Destroy()
+originalm1:Destroy()
+clone.Parent = player.Backpack
+ 
+wait()
+original:Destroy()
+end)
+
+game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Position = UDim2.new(0, 1150, 0, 580)
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Katana Enabled"
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = ""
+game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Rotation = 90
+game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Position = UDim2.new(0.462, 0, 0.654, 0)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Position = UDim2.new(0.481, 0, 0.654, 0)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Rotation = 90
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.ImageLabel:Destroy()
+
+
+ ---Fast
+                local RunspeedBypass = Instance.new("BoolValue")
+        RunspeedBypass.Name = "Battling"
+        RunspeedBypass.Parent = game.Players.LocalPlayer.Character
+        wait(0.3)
+        game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 100
+
+wait(1)
+
+game.Players.LocalPlayer.Character.GTFriskSword.Transparency = 1
+
+
+
+game:GetObjects("rbxassetid://8697009003")[1].Parent = game.Workspace
+ game.Workspace.katana["Handle2"].CanCollide = false
+game.Workspace.katana.HandGuard.CanCollide = false
+game.Workspace.katana.BlackPart.CanCollide = false 
+ game.Workspace.katana.Blade.CanCollide = false 
+ game.Workspace.katana["SamuraiSwordP2"].CanCollide = false 
+ game.Workspace.katana["SamuraiSwordP3"].CanCollide = false 
+ game.Workspace.katana["SamuraiSwordP6"].CanCollide = false
+game.Workspace.katana["Handle2"].Anchored = false
+game.Workspace.katana.HandGuard.Anchored = false
+game.Workspace.katana.BlackPart.Anchored = false 
+ game.Workspace.katana.Blade.Anchored = false 
+ game.Workspace.katana["SamuraiSwordP2"].Anchored = false 
+ game.Workspace.katana["SamuraiSwordP3"].Anchored = false 
+ game.Workspace.katana["SamuraiSwordP6"].Anchored = false
+
+
+
+--------------------------------------------------------
+local cf0 = CFrame.new(0,-0.80,0) * CFrame.Angles(0,-9.50,0)
+ 
+ local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Workspace.katana["Handle2"]
+hw.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,-0.70,-3.2) * CFrame.Angles(0,0,0)
+ 
+ local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Workspace.katana["Blade"]
+hw.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,-0.75,-0.95) * CFrame.Angles(0,0,0)
+ 
+ local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Workspace.katana["HandGuard"]
+hw.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.C0 = cf0:Inverse()
+
+
+local cf0 = CFrame.new(0,-0.75,-1.2) * CFrame.Angles(0,0,0)
+
+ local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Workspace.katana["SamuraiSwordP3"]
+hw.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.C0 = cf0:Inverse()
+
+
+local cf0 = CFrame.new(0,-0.80,0) * CFrame.Angles(0,-9.50,0)
+ 
+ local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Workspace.katana["BlackPart"]
+hw.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.C0 = cf0:Inverse()
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692034721"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.2)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692049478"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.2)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692059818"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.4, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,100,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(2)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692064067"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,0,50), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "2" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692059818"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 50
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,100,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+        local Anim = Instance.new("Animation")
+        Anim.AnimationId = "rbxassetid://4920626240"
+        local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+        k:Play()
+        k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-100,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+wait(1)
+        local Anim = Instance.new("Animation")
+        Anim.AnimationId = "rbxassetid://5657497819"
+        local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+        k:Play()
+        k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,0,100), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "3" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692034721"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.4)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692034721"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.4)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692034721"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.4)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://8692034721"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.5, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+						["Velocity"] = Vector3.new(0,-1,0), 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+
+end
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "4" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move1", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move3", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+end
+end
+end)
+
+repeat wait() until game.Players.LocalPlayer.Character.Humanoid.Health <= 50
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Katana Enabled"
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = ""
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move4", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+
+
+
+
+--phase 2
+repeat wait() until game.Players.LocalPlayer.Character.Humanoid.Health <= 0
+spawn(function()
+music:Stop()
+end)
+
+
+wait(43)
+local effect1 = game.ReplicatedStorage.Effects.Zanzoken.ParticleEmitter:Clone()    
+effect1.Parent = game.Players.LocalPlayer.Character.Torso
+local effect3 = game.ReplicatedStorage.Effects.TransformationAura.ParticleEmitter:Clone()
+effect3.Parent = game.Players.LocalPlayer.Character.Torso
+local effect31 = game.ReplicatedStorage.Effects.TransformationAura.Particle:Clone()
+effect31.Parent = game.Players.LocalPlayer.Character.Torso
+local effect32 = game.ReplicatedStorage.Effects.TransformationAura.Aura1:Clone()
+effect32.Parent = game.Players.LocalPlayer.Character.Torso
+local effect4 = game.ReplicatedStorage.Effects.TransformationAura.ParticleEmitter:Clone()
+effect4.Parent = game.Players.LocalPlayer.Character.Torso
+local effect41 = game.ReplicatedStorage.Effects.TransformationAura.Particle:Clone()
+effect41.Parent = game.Players.LocalPlayer.Character.Torso
+local effect42 = game.ReplicatedStorage.Effects.TransformationAura.Aura1:Clone()
+effect42.Parent = game.Players.LocalPlayer.Character.Torso
+
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+    v:Fire({"Particle","DarkAuraEffect",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,math.huge})
+end
+  local weld23 = Instance.new("ManualWeld")
+			weld23.Part0 = game.Players.LocalPlayer.Character["HumanoidRootPart"]
+			weld23.Part1 = game.Players.LocalPlayer.Character.Effects.DarkAuraEffect
+			weld23.C1 = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame
+			weld23.C0 = game.Players.LocalPlayer.Character["HumanoidRootPart"].CFrame * CFrame.new(0,-2.7,0)
+			weld23.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+local player = game.Players.LocalPlayer.Character
+local Aura = game.ReplicatedStorage.Resources.Character.Auras.PowerUp
+
+a = Aura:Clone()
+a.Parent = player
+wait(1)
+player.PowerUp.Head.BodyAura.Parent = player.Head
+player.PowerUp["Left Arm"].BodyAura.Parent = player["Left Arm"]
+player.PowerUp["Right Arm"].BodyAura.Parent = player["Right Arm"]
+player.PowerUp["Right Leg"].BodyAura.Parent = player["Right Leg"]
+player.PowerUp["Left Leg"].BodyAura.Parent = player["Left Leg"]
+player.PowerUp["Torso"].BodyAura.Parent = player["Torso"]
+
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Katana Enabled"
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = ""
+
+
+local A_1 = 
+	{
+		[1] = getrenv()._G.Pass,
+		[2] = "Blocking", 
+		[3] = true
+	}
+local Event = game:GetService("ReplicatedStorage").Remotes.Functions
+Event:InvokeServer(A_1)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "r" then
+        local function getlockchar()
+            local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            return char
+        end        
+
+        local char = getlockchar()
+        if char == nil then
+            warn('bithc lock on to something crack nugget')
+        else
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+        end 
+    end
+end)
+
+
+
+                      local mouse = game.Players.LocalPlayer:GetMouse()
+                mouse.KeyDown:Connect(function(k) 
+                    if k == "5" then
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90) 
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 0
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 4
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 2
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973918259"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 3
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://5973915611"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(0.90)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+						["Velocity"] =game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 4
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local Anim = Instance.new("Animation")
+                Anim.AnimationId = "rbxassetid://7501550774"
+                local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+                k:Play()
+                k:AdjustSpeed(1.5)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "KnifeHitEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = Vector3.new(0,0,50) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 15
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "6" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move6", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move5", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+end
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "7" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Katana Enabled" then
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move5", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Move7", 
+	[3] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.GTFriskMoves
+Event:InvokeServer(A_1)
+wait(1)
+game.Players.LocalPlayer.Character.GTFriskSword.Transparency = 1
+end
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "e" then 
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Combat Enabled"
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "q" then 
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Katana Enabled"
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Combat Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929661098"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929665831"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929669003"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929670790"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929673252"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929700678"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929723918"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929733967"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929737220"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "100", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "2" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Combat Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://3778668092"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0.8)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Normal", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "100", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "3" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Combat Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://3778668092"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0.8)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "50", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+wait(0.7)
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		function getlockchar()
+			local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+			return char
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929737220"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0.8)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
+
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "4" then 
+ if game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text == "Combat Enabled" then
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5861141100"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		function getlockchar()
+			local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+			return char
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+                local A_1 = getrenv()._G.Pass
+				local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+				local A_3 = 
+					{
+						["HitTime"] = 0.1, 
+						["Type"] = "Knockback", 
+						["HitEffect"] = "BurstEffect",
+						["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+						["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
+						["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * "-1", 
+						["CombatInv"] = true,
+						["Damage"] = 10
+					}
+				local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+				Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end)
+
